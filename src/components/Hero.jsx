@@ -113,7 +113,7 @@ MongoDB with a focus on performance, simple design, and real-time features.
                 whileTap={{ scale: .95 }}
                 className="px-8 py-4 border-2 border-cyan-400 text-white bg-cyan-500/20 backdrop-blur-sm rounded-lg hover:bg-cyan-500 hover:text-black transition-all duration-300 shadow-lg font-semibold cta-button"
               >
-                <span className="relative z-10 drop-shadow-lg">Contact</span>
+                <span className="relative z-10 drop-shadow-lg">My Resume</span>
               </m.a>
             </m.div>
 
