@@ -1,6 +1,7 @@
 
 import React from "react";
 import { motion as m } from "framer-motion";
+import p1 from '../assets/p1.jpg';
 
 const About = () => {
   const milestones = [
@@ -39,7 +40,7 @@ const About = () => {
           className="rounded-2xl overflow-hidden border-2 border-cyan-400 shadow-[0_0_30px_#00FFF0] w-[400px] h-[450px]"
         >
           <img
-            src="src/assets/p1.jpg" // Replace with correct image path
+             src={p1} 
             alt="Profile"
             className="w-full h-full object-cover"
           />
