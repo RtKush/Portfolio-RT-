@@ -65,10 +65,10 @@ const BackToTop = () => {
                 repeat: Infinity,
                 delay: i * 0.2
               }}
-              style={{
-                left: "50%",
-                top: "50%"
-              }}
+              // style={{
+              //   left: "50%",
+              //   top: "50%"
+              // }}
             />
           ))}
 

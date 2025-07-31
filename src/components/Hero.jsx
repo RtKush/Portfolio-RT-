@@ -91,11 +91,7 @@ function Hero() {
                   >
                     {roles[index]}
                   </m.span>
-                  {/* <m.span
-                    animate={{ opacity: [0, 1, 0] }}
-                    transition={{ duration: 1, repeat: Infinity }}
-                    className="inline-block w-.1 h-15 bg-orange-400 ml-1 shadow-lg shadow-cyan-400/50"
-                  /> */}
+                 
                 </m.h2>
               </AnimatePresence>
             </m.div>
@@ -136,16 +132,29 @@ MongoDB with a focus on performance, simple design, and real-time features.
           </div>
 
           {/* ---------- right column ---------- */}
-          <m.div variants={imageVariants} className="md:w-1/2 mt-12 md:mt-0 flex justify-center">
-            <m.div
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-cyan-400 shadow-[0_0_40px_rgba(6,182,212,0.8)] group image-container"
-            >
-              <div className="absolute inset-0 rotating-border rounded-full" />
-              <img src={p3} alt="Rt Kush" className="w-full h-full object-cover relative z-10" loading="lazy" />
-              <div className="absolute inset-0 image-overlay" />
-            </m.div>
-          </m.div>
+         
+          
+<m.div variants={imageVariants} className="md:w-1/2 mt-12 md:mt-0 flex justify-center ml-6 md:ml-20">
+  <m.div
+    whileHover={{ scale: 1.05 }}
+    className="relative w-72 h-72 overflow-hidden shadow-xl transition duration-300 group bg-white"
+    style={{
+      borderRadius: '58% 42% 55% 45% / 55% 45% 55% 45%', // Custom squish curve
+      border: '2px solid #ccc',
+    }}
+  >
+    <img
+      src={p3}
+      alt="Rt Kush"
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </m.div>
+</m.div>
+
+
+
+
         </m.div>
       </section>
     </LazyMotion>

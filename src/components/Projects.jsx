@@ -1,90 +1,82 @@
+
 import React, { useMemo } from 'react';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaEye } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaEye, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
-/* ------------------------------------------------------------------
-   STATIC DATA
------------------------------------------------------------------- */
 const projects = [
   {
     title: 'Real Time Chat',
-    description: 'A real time Chat application, for Family and Friends also for Bussines',
+    description: 'A real time Chat application, for Family and Friends also for Business',
     image: 'Chat.jpg',
-    tags: ['MERN', 'JWT', 'MongoDB', 'Socket.io','Daisy UI','Tailwind CSS'],
+    tags: ['MERN', 'JWT', 'MongoDB', 'Socket.io', 'Daisy UI', 'Tailwind CSS'],
     githubLink: 'https://github.com/',
-    liveLink: 'https://.com'
+    liveLink: 'https://.com',
+    linkedinPost: 'https://.com',
+    youtubeLink: '#/your-demo-video'
   },
-   {
+  {
     title: 'Canvas',
     description: 'Image search with filtering & sorting.',
     image: 'canvas.jpg',
     tags: ['JavaScript','CSS', 'Canvas API', 'HTML'],
-    githubLink: 'https://github.com/Devina0810/Image-Search-App',
-    liveLink: 'https://image-search-app-lilac-rho.vercel.app/'
+    githubLink: 'https://github.com/',
+    liveLink: 'https://.com',
+    linkedinPost: 'https://.com',
+    youtubeLink: '#'
   },
   {
     title: 'Maison Belle',
     description: 'Full e-commerce site with cart, auth and Razorpay payments.',
     image: 'moviehub.jpg',
     tags: ['JavaScripts','CSS','API MDB','HTML'],
-    githubLink: 'https://github.com/Devina0810/Maison-Belle',
-    liveLink: 'https://maison-belle.onrender.com/'
+    githubLink: 'https://github.com/',
+    liveLink: 'https://.com',
+    linkedinPost: 'https://.com',
+    youtubeLink: '#'
   },
   {
     title: 'Todo List App',
     description: 'Task manager with categorisation and priorities.',
     image: 'trans.jpg',
     tags: ['JavaScript','CSS','API G-Translator','HTML'],
-    githubLink: 'https://github.com/Devina0810/Task-trackr',
-    liveLink: 'https://task-trackr-bga4.onrender.com/'
+    githubLink: 'https://github.com/',
+    liveLink: 'https://.com',
+    linkedinPost: 'https://.com',
+    youtubeLink: '#'
   },
   {
     title: 'Movie-Time',
     description: 'Movie search app using TMDB; surfaces top-trending picks.',
     image: '/AiAssist.jpg',
     tags: ['JavaScript','CSS','HTML','API'],
-    githubLink: 'https://github.com/Devina0810/Movie-Time',
-    liveLink: 'https://movie-time-eight-phi.vercel.app/'
+    githubLink: 'https://github.com/',
+    liveLink: 'https://.com',
+    linkedinPost: 'https://.com',
+    youtubeLink: '#'
   },
   {
     title: 'Weather Application',
     description: 'Real-time weather with geolocation & 5-day forecast.',
     image: 'notes4u.jpg',
     tags: ['JavaScript','CSS','HTML'],
-    githubLink: 'https://github.com/Devina0810/Weather-App',
-    liveLink: 'https://weather-app-beta-three-89.vercel.app/'
+    githubLink: 'https://github.com/',
+    liveLink: 'https://.com',
+    linkedinPost: 'https://.com',
+    youtubeLink: '#'
   },
   {
     title: 'SnapSeek',
     description: 'Image search with filtering & sorting.',
     image: 'todo.jpg',
     tags: ['React', 'API Integration'],
-    githubLink: 'https://github.com/Devina0810/Image-Search-App',
-    liveLink: 'https://image-search-app-lilac-rho.vercel.app/'
-  },
-   {
-    title: '...',
-    description: 'Image search with filtering & sorting.',
-    image: 'todo.jpg',
-    tags: ['React', 'API Integration'],
-    githubLink: 'https://github.com/Devina0810/Image-Search-App',
-    liveLink: 'https://image-search-app-lilac-rho.vercel.app/'
-  },
-   {
-    title: '...',
-    description: 'Image search with filtering & sorting.',
-    image: 'todo.jpg',
-    tags: ['React', 'API Integration'],
-    githubLink: 'https://github.com/Devina0810/Image-Search-App',
-    liveLink: 'https://image-search-app-lilac-rho.vercel.app/'
+    githubLink: 'https://github.com/',
+    liveLink: 'https://',
+    linkedinPost: 'https://.com',
+    youtubeLink: '#'
   }
 ];
 
-/* ------------------------------------------------------------------
-   CARD COMPONENT
------------------------------------------------------------------- */
 function ProjectCard({ project, idx }) {
-  /* tiny stagger memo to avoid re-building the object every render */
   const tagDelay = useMemo(() => 0.3, []);
   return (
     <m.div
@@ -95,11 +87,8 @@ function ProjectCard({ project, idx }) {
       whileHover={{ y: -15, scale: 1.02 }}
       className={`project-card relative rounded-2xl overflow-hidden shadow-2xl bg-black/70 backdrop-blur-xl border border-cyan-400/20 flex flex-col group h-full card-border-${idx % 4}`}
     >
-      {/* ---- image ---- */}
       <div className="relative h-48 flex-shrink-0 overflow-hidden">
         <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-
-        {/* dark gradient & tags & GH badge */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-4">
           <div className="flex justify-between w-full items-end">
             <div className="flex flex-wrap gap-2">
@@ -116,7 +105,6 @@ function ProjectCard({ project, idx }) {
                 </m.span>
               ))}
             </div>
-
             {project.githubLink && (
               <m.a
                 href={project.githubLink}
@@ -134,7 +122,6 @@ function ProjectCard({ project, idx }) {
         </div>
       </div>
 
-      {/* ---- text ---- */}
       <div className="p-6 flex flex-col flex-grow">
         <m.h3 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-xl font-bold mb-3 text-white project-title">
           {project.title}
@@ -145,17 +132,6 @@ function ProjectCard({ project, idx }) {
         </m.p>
 
         <m.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="mt-auto flex flex-wrap gap-4">
-          {project.githubLink && (
-            <m.a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              className="inline-flex items-center text-sm text-cyan-300 hover:text-cyan-200 transition-all duration-300 font-semibold"
-            >
-              <FaGithub className="mr-2" /> GitHub <FaExternalLinkAlt className="w-3 h-3 ml-1" />
-            </m.a>
-          )}
           {project.liveLink && (
             <m.a
               href={project.liveLink}
@@ -167,30 +143,44 @@ function ProjectCard({ project, idx }) {
               <FaEye className="mr-2" /> Live Demo <FaExternalLinkAlt className="w-3 h-3 ml-1" />
             </m.a>
           )}
+          {project.linkedinPost && (
+            <m.a
+              href={project.linkedinPost}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              className="inline-flex items-center text-sm text-blue-300 hover:text-blue-200 transition-all duration-300 font-semibold"
+            >
+              <FaLinkedin className="mr-2" /> LinkedIn <FaExternalLinkAlt className="w-3 h-3 ml-1" />
+            </m.a>
+          )}
+          {project.youtubeLink && (
+            <m.a
+              href={project.youtubeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              className="inline-flex items-center text-sm text-red-400 hover:text-red-300 transition-all duration-300 font-semibold"
+            >
+              <FaYoutube className="mr-2" /> YouTube <FaExternalLinkAlt className="w-3 h-3 ml-1" />
+            </m.a>
+          )}
         </m.div>
       </div>
     </m.div>
   );
 }
 
-/* ------------------------------------------------------------------
-   DECORATIVE BACKGROUND ELEMENTS  (pure-CSS)
------------------------------------------------------------------- */
 function ProjectsDecorations() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* 4 floating ORBS */}
       <span className="projects-orb orb-p1" />
       <span className="projects-orb orb-p2" />
       <span className="projects-orb orb-p3" />
       <span className="projects-orb orb-p4" />
-
-      {/* 8 small PARTICLES */}
       {Array.from({ length: 8 }).map((_, i) => (
         <span key={i} className={`projects-particle part-p${i}`} />
       ))}
-
-      {/* 3 scanning LINES */}
       <span className="projects-line line-p1" />
       <span className="projects-line line-p2" />
       <span className="projects-line line-p3" />
@@ -198,9 +188,6 @@ function ProjectsDecorations() {
   );
 }
 
-/* ------------------------------------------------------------------
-   MAIN SECTION
------------------------------------------------------------------- */
 function Projects() {
   return (
     <LazyMotion features={domAnimation}>
@@ -208,9 +195,7 @@ function Projects() {
         <div className="absolute inset-0 projects-bg-animation" />
         <ProjectsDecorations />
         <div className="absolute inset-0 bg-black/50" />
-
         <div className="relative z-10 container mx-auto px-6">
-          {/* Heading */}
           <m.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -228,32 +213,15 @@ function Projects() {
             />
           </m.h2>
 
-          {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-stretch">
             {projects.map((p, i) => (
               <ProjectCard key={i} project={p} idx={i} />
             ))}
           </div>
-
-          {/* GitHub CTA */}
-          <m.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }} viewport={{ once: true }} className="text-center mt-16">
-            <m.a
-              href="https://github.com/Devina0810"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ y: -6, scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-xl hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 shadow-lg font-semibold relative overflow-hidden github-button"
-            >
-              <span className="relative z-10 mr-3">View All Projects on GitHub</span>
-              <m.div whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }}>
-                <FaGithub className="text-xl" />
-              </m.div>
-            </m.a>
-          </m.div>
         </div>
       </section>
     </LazyMotion>
   );
 }
+
 export default React.memo(Projects);

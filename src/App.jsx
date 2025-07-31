@@ -12,6 +12,9 @@ import Contact  from './components/Contact';
 import Footer   from './components/Footer';
 import BackToTop from './components/BackToTop';
 
+
+
+
 /* -------------------------------------------------------------
    1.  THE APP
 ------------------------------------------------------------- */
@@ -114,30 +117,66 @@ function GlobalParticles() {
   );
 }
 
-/* ---- Loading splash (unchanged visuals) ---- */
+
+const bootLines = [
+  "> Initializing RT Kush Portfolio Systems...",
+  "> Establishing secure environment...",
+  "> System startup successful.",
+];
+
 function LoadingScreen() {
+  const [lineIndex, setLineIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLineIndex((prev) => (prev < bootLines.length - 1 ? prev + 1 : prev));
+    }, 900);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <m.div initial={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.8 }} className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-gray-900 via-orange-900 to-black">
-      <div className="absolute inset-0 loading-particles" />
+    <m.div
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-green-400 font-mono"
+    >
+      {/* Background Scanlines + Grid */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle,_rgba(0,255,0,0.1)_1px,_transparent_1px)] bg-[length:20px_20px] opacity-5 animate-pulse pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-10 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-[repeating-linear-gradient(transparent,transparent_2px,rgba(0,255,0,0.04)_4px)] pointer-events-none" />
 
-      <div className="text-center relative z-10">
-        <m.div animate={{ scale: [1, 1.2, 1], rotate: [0, 360] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }} className="w-50 h-10 mx-auto mb-6 rounded-full bg-gradient-to-r from-orange-400 to-green-400 flex items-center justify-center">
-          <m.span animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }} className="text-2xl font-bold bg-gradient-to-r from-blue via-blue-700 to-blue bg-[length:200%_100%] bg-clip-text text-transparent">
-            RT Kush
-          </m.span>
-        </m.div>
+      {/* Glitch Logo */}
+      <m.div
+        animate={{ scale: [1, 1.1, 1], x: [0, -1, 1, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        className="text-4xl font-extrabold tracking-wider relative z-10 glitch mb-12"
+      >
+        <span className="relative z-10">[ RT ]</span>
+        <span className="absolute top-0 left-0 text-pink-500 opacity-50 blur-sm z-0">[ RT ]</span>
+      </m.div>
 
-        <m.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="text-3xl font-bold text-white mb-4">
-          Rt Kush
-        </m.h1>
-        <m.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="text-yellow-300 mb-8">
-          Welcome to My World....
-        </m.p>
+      {/* Boot Lines Terminal */}
+      <div className="text-sm text-green-300 bg-black bg-opacity-40 p-4 rounded-lg w-[80%] max-w-md border border-green-600 shadow-md">
+        {bootLines.slice(0, lineIndex + 1).map((line, i) => (
+          <div key={i} className="tracking-wide">
+            {line}
+            {i === lineIndex && <span className="animate-pulse">▋</span>}
+          </div>
+        ))}
+      </div>
 
-        <div className="w-64 h-1 bg-gray-700 rounded-full mx-auto overflow-hidden">
-          <m.div initial={{ width: 0 }} animate={{ width: '100%' }} transition={{ duration: 1.8, ease: 'easeInOut' }} className="h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full" />
-        </div>
+      {/* Progress Bar */}
+      <div className="absolute bottom-16 w-[60%] h-1 bg-green-900 rounded-full overflow-hidden">
+        <m.div
+          initial={{ width: 0 }}
+          animate={{ width: '100%' }}
+          transition={{ duration: 4, ease: 'easeInOut' }}
+          className="h-full bg-gradient-to-r from-green-400 to-lime-500 animate-pulse"
+        />
       </div>
     </m.div>
   );
 }
+
+

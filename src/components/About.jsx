@@ -1,197 +1,84 @@
-import React from 'react';
-import { LazyMotion, domAnimation, m } from 'framer-motion';
-import p1 from '../assets/p1.jpg';
 
-/* --------------------------------------------- */
-function About() {
+import React from "react";
+import { motion as m } from "framer-motion";
+
+const About = () => {
+  const milestones = [
+    { year: "2020–2022", text: "Campus Ambassador at CoderSoftech" },
+    { year: "2022", text: "Led Final Year Project during BCA" },
+    { year: "2024", text: "Mentored interns at CoderSoftech" },
+    { year: "2024", text: "Winner – GFG-160 Coding Challenge" },
+    { year: "2025", text: "Reached 1700+ Contest Rating on LeetCode" },
+    { year: "2025", text: "Winner – GF-160 Coding Challenge" }
+  ];
+
   return (
-    <LazyMotion features={domAnimation}>
-      <section id="about" className="relative py-20 overflow-hidden about-section">
-        {/* colour-shift backdrop */}
-        <div className="absolute inset-0 about-bg-animation" />
+    <div
+      id="about"
+      className="min-h-screen px-6 py-16 md:px-20 bg-gradient-to-b from-gray-900 to-black text-white"
+    >
+      <m.h2
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-4xl md:text-5xl font-bold text-center mb-12 relative"
+      >
+        <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent font-extrabold">
+          Who I Am
+        </span>
+      </m.h2>
 
-        {/* decorative orbs / particles / lines (pure-CSS) */}
-        <AboutDecorations />
-
-        {/* dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/50" />
-
-        {/* ---------------- main card ---------------- */}
+      <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+        {/* Left image side */}
         <m.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="container mx-auto px-6 relative z-10"
+          className="rounded-2xl overflow-hidden border-2 border-cyan-400 shadow-[0_0_30px_#00FFF0] w-[400px] h-[450px]"
         >
-          <div className="px-4 md:container md:mx-auto md:px-6">
-            <m.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="w-full bg-black/70 backdrop-blur-xl rounded-3xl shadow-2xl p-6 md:p-16 border border-cyan-400/20 relative overflow-hidden about-card"
-            >
-              {/* subtle radial pulse */}
-              <div className="absolute inset-0 card-bg-animation" />
-
-              {/* ----------- title ----------- */}
-              <m.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-bold text-center mb-8 relative"
-              >
-                <span className="about-title-gradient font-extrabold">About&nbsp;Me</span>
-                <m.span
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                  viewport={{ once: true }}
-                  className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full shadow-lg shadow-cyan-400/50"
-                />
-              </m.h2>
-
-              <div className="flex flex-col md:flex-row items-center gap-10">
-                {/* ------------- image ------------- */}
-                <m.div
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  viewport={{ once: true }}
-                  className="md:w-1/3 mb-8 md:mb-0 flex justify-center"
-                >
-                  <m.div
-                    whileHover={{ scale: 1.05, rotate: 2 }}
-                    className="w-full max-w-xs sm:max-w-sm md:w-96 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(6,182,212,0.6)] border-2 border-cyan-400/50 relative group image-container"
-                  >
-                    <div className="absolute inset-0 rotating-border-about rounded-2xl" />
-                    <img src={p1} alt="Working" className="w-full h-full object-cover relative z-10 group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                    <div className="absolute inset-0 image-overlay-about" />
-
-                    {/* tiny orbiting dots – CSS only */}
-                    <span className="img-particle ip-1" />
-                    <span className="img-particle ip-2" />
-                    <span className="img-particle ip-3" />
-                  </m.div>
-                </m.div>
-
-                {/* ------------- text ------------- */}
-                <m.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  viewport={{ once: true }}
-                  className="md:w-2/3 md:pl-12 px-4 text-justify"
-                >
-                  <m.h3
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.7 }}
-                    viewport={{ once: true }}
-                    className="text-2xl md:text-3xl font-semibold mb-4 text-cyan-300 who-i-am-title"
-                  >
-                    Rt&nbsp;Kush
-                  </m.h3>
-
-                  <m.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-gray-100 mb-6 leading-relaxed font-medium about-description"
-                  >
-                    I am currently in my third year of studying Computer Application at the National Institute of Technology , Raipur&nbsp;(NIT Raipur)
-                  </m.p>
-
-                  {/* ----------- timeline ----------- */}
-                  <Timeline />
-
-                  {/* ----------- resume button ------- */}
-                  <m.a
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1.6 }}
-                    viewport={{ once: true }}
-                    href="#projects"
-                    // target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-block px-8 py-4 border-2 border-cyan-400 text-white bg-cyan-500/20 backdrop-blur-sm rounded-xl hover:bg-cyan-500 hover:text-black transition-all duration-300 shadow-lg font-semibold relative overflow-hidden resume-button"
-                  >
-                    <span className="relative z-10 drop-shadow-lg">View My Projects</span>
-                  </m.a>
-                </m.div>
-              </div>
-            </m.div>
-          </div>
+          <img
+            src="src/assets/p1.jpg" // Replace with correct image path
+            alt="Profile"
+            className="w-full h-full object-cover"
+          />
         </m.div>
-      </section>
-    </LazyMotion>
-  );
-}
-export default React.memo(About);
 
-/* ----------------- tiny helper components ----------------- */
-function AboutDecorations() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* orbs */}
-      <span className="about-orb orb-1" />
-      <span className="about-orb orb-2" />
-      <span className="about-orb orb-3" />
+        {/* Right text side */}
+        <m.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-white/5 backdrop-blur-2xl border border-cyan-300/20 rounded-2xl p-10 shadow-2xl w-full"
+        >
+          <m.h3 className="text-2xl md:text-3xl font-semibold mb-4 text-cyan-300">
+            Rt Kush — Frontend Developer
+          </m.h3>
 
-      {/* particles */}
-      {Array.from({ length: 6 }).map((_, i) => (
-        <span key={i} className={`about-particle part-${i}`} />
-      ))}
+          <m.p className="text-gray-100 mb-6 leading-relaxed font-medium">
+            I’m a third-year Computer Application student at NIT Raipur, passionate about
+            crafting sleek, high-performing web experiences. I blend UI/UX aesthetics with
+            frontend logic to build digital products users love.
+          </m.p>
 
-      {/* grid / scan lines */}
-      <span className="about-line line-a" />
-      <span className="about-line line-b" />
+          <h4 className="text-xl md:text-2xl font-medium mb-4 text-purple-300">
+            Milestones
+          </h4>
+
+          <ul className="list-disc ml-6 space-y-3 text-gray-300">
+            {milestones.map((item, index) => (
+              <li key={index}>
+                <span className="text-cyan-400 font-semibold mr-2">{item.year}:</span>
+                {item.text}
+              </li>
+            ))}
+          </ul>
+        </m.div>
+      </div>
     </div>
   );
-}
+};
 
-function Timeline() {
-  const items = [
-    { year: '2K20-2K22 ', text: ' as Campus Ambasdor at CoderSoftech' },
-    { year: '2024', text: 'MentorShip at CoderSoftech, Guided the Intern.' },
-    { year: '2024', text: 'Winner GFG160 Coding Challenge' },
-        { year: '2024', text: 'Winner GFG160 Coding Challenge' },
-            { year: '2024', text: 'Winner GFG160 Coding Challenge' },
-                { year: '2024', text: 'Winner GFG160 Coding Challenge' }
-
-    
-  ];
-  return (
-    <m.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.9 }}
-      viewport={{ once: true }}
-      className="mb-8"
-    >
-      <h4 className="text-xl md:text-2xl font-medium mb-6 text-purple-300 journey-title">Achievement</h4>
-      <div className="space-y-6">
-        {items.map((item, idx) => (
-          <m.div
-            key={idx}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 1 + idx * 0.2 }}
-            viewport={{ once: true }}
-            className="flex items-start group"
-          >
-            <m.span whileHover={{ scale: 1.2 }} className="flex-shrink-0 h-4 w-4 mt-1 bg-gradient-to-r from-cyan-400 to-purple-500 border-2 border-white rounded-full mr-4 shadow-lg shadow-cyan-400/50 group-hover:shadow-cyan-400/80 transition-all duration-300" />
-            <p className="text-gray-100 font-medium journey-text">
-              <span className="font-bold text-cyan-300">{item.year}:</span> {item.text}
-            </p>
-          </m.div>
-        ))}
-      </div>
-    </m.div>
-  );
-}
+export default About;
