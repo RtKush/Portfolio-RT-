@@ -37,7 +37,7 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="rounded-2xl overflow-hidden border-2 border-cyan-400 shadow-[0_0_30px_#00FFF0] w-[300px] h-[300px]"
+          className="rounded-2xl overflow-hidden border-2 border-cyan-400 shadow-[0_0_30px_#00FFF0] w-[300px] h-[370px]"
         >
           <img
              src={p1} 
