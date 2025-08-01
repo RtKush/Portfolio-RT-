@@ -137,7 +137,7 @@ MongoDB with a focus on performance, simple design, and real-time features.
 <m.div variants={imageVariants} className="md:w-1/2 mt-12 md:mt-0 flex justify-center ml-6 md:ml-20">
   <m.div
     whileHover={{ scale: 1.05 }}
-    className="relative w-72 h-72 overflow-hidden shadow-xl transition duration-300 group bg-white"
+    className="relative w-50 h-60 overflow-hidden shadow-xl transition duration-300 group bg-white"
     style={{
       borderRadius: '58% 42% 55% 45% / 55% 45% 55% 45%', // Custom squish curve
       border: '2px solid #ccc',

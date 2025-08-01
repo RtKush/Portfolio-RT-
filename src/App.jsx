@@ -121,7 +121,7 @@ function GlobalParticles() {
 const bootLines = [
   "> Initializing RT Kush Portfolio Systems...",
   "> Establishing secure environment...",
-  "> System startup successful.",
+  "> System Startup Successful.",
 ];
 
 function LoadingScreen() {
