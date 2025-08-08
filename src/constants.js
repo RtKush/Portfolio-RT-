@@ -4,7 +4,7 @@ export const contactInfo = [
   {
     icon: "fas fa-briefcase",
     title: "Role",
-    value: "Frontend Developer & UI/UX Enthusiast"
+    value: "Full Stack Developer (MERN Stack))"
   },
   {
     icon: "fas fa-bolt",

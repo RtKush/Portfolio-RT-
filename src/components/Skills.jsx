@@ -71,7 +71,7 @@ const skillCategories = [
   {
     id: "interests",
     title: "Fundamentals",
-    icon: <FaHeart className="text-2xl text-orange-400" />,
+    // icon: <FaHeart className="text-2xl text-orange-400" />,
    
     color: "from-green-700 to-black-800",
     skills: [

@@ -6,11 +6,11 @@ import p1 from '../assets/p1.jpg';
 const About = () => {
   const milestones = [
     { year: "2020–2022", text: "Campus Ambassador at CoderSoftech" },
-    { year: "2022", text: "Led Final Year Project during BCA" },
-    { year: "2024", text: "Mentored interns at CoderSoftech" },
-    { year: "2024", text: "Winner – GFG-160 Coding Challenge" },
-    { year: "2025", text: "Reached 1700+ Contest Rating on LeetCode" },
-    { year: "2025", text: "Winner – GF-160 Coding Challenge" }
+    { year: "2022", text: "Lead Final Year Project during BCA" },
+    { year: "2024", text: "Mentor Interns at CoderSoftech" },
+    { year: "2024", text: "Winner – GFG(GeeksForGeeks)-160 Coding Challenge" },
+    { year: "2025", text: " 1700+ Contest Rating on LeetCode" },
+    { year: "2025", text: "Winner – GFG(GeeksForGeeks)-160 Coding Challenge" }
   ];
 
   return (
@@ -54,14 +54,13 @@ const About = () => {
           viewport={{ once: true }}
           className="bg-white/5 backdrop-blur-2xl border border-cyan-300/20 rounded-2xl p-10 shadow-2xl w-full"
         >
-          <m.h3 className="text-2xl md:text-3xl font-semibold mb-4 text-cyan-300">
-            Rt Kush — Frontend Developer
+          <m.h3 className="text-2xl md:text-3xl font-semibold mb-4 text-orange-600">
+            Rt Kush — National Institute of Technology, Raipur
           </m.h3>
 
           <m.p className="text-gray-100 mb-6 leading-relaxed font-medium">
-            I’m a third-year Computer Application student at NIT Raipur, passionate about
-            crafting sleek, high-performing web experiences. I blend UI/UX aesthetics with
-            frontend logic to build digital products users love.
+           Passionate about building real-world solutions using full-stack development. Skilled in Java, React, Node.js, and MongoDB with a focus on performance, simple design, and real-time features.
+
           </m.p>
 
           <h4 className="text-xl md:text-2xl font-medium mb-4 text-purple-300">

@@ -16,16 +16,10 @@
   } from 'react-icons/fa';
   import emailjs from '@emailjs/browser';
 
-  /* Fallbacks */
-  const fallbackContact = [
-    { Icon: FaEnvelope, title: 'Email', value: 'kush22aur@gmail.com' },
-    { Icon: FaPhone, title: 'Phone', value: '+91 XXXXXXXXXX' },
-    { Icon: FaMapMarkerAlt, title: 'Location', value: 'Aurangabad, Bihar, India' },
-  ];
   const fallbackSocial = [
     { Icon: FaGithub, url: 'https://github.com/RtKush' },
     { Icon: FaLinkedin, url: 'https://www.linkedin.com/in/kush-kumar-505477202/' },
-    { Icon: FaTwitter, url: 'https://twitter.com/yourusername' }, // Replace with your actual handle
+    { Icon: FaTwitter, url: 'https://x.com/rtlavkush' }, 
   ];
 
   function Contact() {
