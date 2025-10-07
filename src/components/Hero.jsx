@@ -103,7 +103,7 @@ MongoDB with a focus on performance, simple design, and real-time features.
 
             <m.div variants={itemVariants} className="flex space-x-4">
               <m.a
-                href="/ResumeKush(Final)1.pdf"
+                href="/KushResume_01.pdf"
                  target="_blank"
                 whileHover={{ y: -4, scale: 1.05 }}
                 whileTap={{ scale: .95 }}
